@@ -1,0 +1,18 @@
+# Print Room HQ with Docker Compose: https://printroomhq.com/guide/docker/
+#   curl -fsSLO https://printroomhq.com/docker/docker-compose.yml && docker compose up -d
+# Then open http://<this computer>:8080
+services:
+  printroomhq:
+    image: ghcr.io/brianmayes/printroomhq:latest
+    container_name: printroomhq
+    restart: unless-stopped
+    network_mode: host               # finds printers on your network by itself (Linux)
+    volumes:
+      - printroomhq:/printroomhq     # the app, your printers, settings and history
+    environment:
+      - TZ=America/New_York          # your time zone, for shop hours and the morning briefing
+      # - PORT=8080                  # another port if 8080 is taken
+      # - PUID=99                    # run as this user and group instead (Unraid: 99 and 100)
+      # - PGID=100
+volumes:
+  printroomhq:
