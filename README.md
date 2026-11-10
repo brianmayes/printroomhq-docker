@@ -18,6 +18,8 @@ docker run -d --name printroomhq --restart unless-stopped --network host \
   -v printroomhq:/printroomhq -e TZ=America/New_York ghcr.io/brianmayes/printroomhq:latest
 ```
 
+On Docker Desktop (Mac or Windows), host networking doesn't reach your computer, so the container runs but nothing opens. Use `-p 8080:8080` in place of `--network host` (in the compose file, swap `network_mode: host` for the `ports` lines) and add your printers by IP address. [More in the guide](https://printroomhq.com/guide/docker/#docker-desktop).
+
 The image is a small starter (amd64 and arm64). On first start it downloads the latest Print Room HQ from printroomhq.com, and it updates itself the same way the Raspberry Pi version does. Your printers, settings and history live in the `printroomhq` volume.
 
 ## Home Assistant

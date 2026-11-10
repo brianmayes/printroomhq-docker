@@ -7,6 +7,11 @@ services:
     container_name: printroomhq
     restart: unless-stopped
     network_mode: host               # finds printers on your network by itself (Linux)
+    # Docker Desktop on a Mac or Windows PC: host networking doesn't reach your computer there, so the
+    # container runs but nothing opens. Delete the network_mode line above and uncomment these two lines,
+    # then add your printers by their IP addresses in Settings > Printers.
+    # ports:
+    #   - "8080:8080"
     volumes:
       - printroomhq:/printroomhq     # the app, your printers, settings and history
     environment:
