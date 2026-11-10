@@ -30,4 +30,4 @@ Or in Home Assistant: Settings › Add-ons › Add-on Store › ⋮ › Reposito
 
 ## License
 
-Print Room HQ is free for personal, noncommercial use. Using it for a business? See [commercial licenses](https://printroomhq.com/#shop).
+Print Room HQ is free for everyone, every feature, at home or in a business. If it helps you, [chip in for a spool](https://ko-fi.com/printroomhq) to keep its servers going.
